@@ -1,6 +1,6 @@
-var btnPiedra = document.getElementById('btn-piedra'); //1 es piedra
-var btnPapel = document.getElementById('btn-papel');//2 es Papel
-var btnTijera = document.getElementById('btn-tijera'); //3 Tijera
+const btnPiedra = document.getElementById('btn-piedra'); //1 es piedra
+const btnPapel = document.getElementById('btn-papel');//2 es Papel
+const btnTijera = document.getElementById('btn-tijera'); //3 Tijera
 
 btnPiedra.addEventListener('click',piedra,true);
 btnPapel.addEventListener('click',papel, true);
@@ -8,9 +8,9 @@ btnTijera.addEventListener('click', tijera, true);
 
 
 
-function piedra(){
-    var x = calculo();
-    var contador;
+function piedra() {
+    const x = calculo();
+    let contador;
     switch(x){
         case 1:
             alert("Empate");
@@ -31,8 +31,8 @@ function piedra(){
     }
 }
 function papel(){
-    var x = calculo();
-    var contador;
+    const x = calculo();
+    let contador;
     switch(x){
         case 1:
             contador = parseInt(document.getElementById("ct-user").innerHTML);
@@ -52,10 +52,11 @@ function papel(){
         default: alert("No se pudo jugar");
     }
 }
-function tijera(){
-    var x = calculo();
-    var contador;
-    switch(x){
+
+function tijera() {
+    const x = calculo();
+    let contador;
+    switch (x) {
         case 1:
             contador = parseInt(document.getElementById("ct-cpu").innerHTML);
             contador++;
@@ -74,7 +75,7 @@ function tijera(){
         default: alert("No se pudo jugar");
     }
 }
-function calculo(){
-    var num = Math.floor(Math.random() * (4 - 1 )) + 1;
-    return num;
+
+function calculo() {
+    return Math.floor(Math.random() * (4 - 1 )) + 1;
 }
